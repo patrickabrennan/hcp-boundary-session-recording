@@ -13,7 +13,11 @@ resource "boundary_storage_bucket" "boundary_aws_bucket" {
   worker_filter = " \"sm-ingress-upstream-worker1\" in \"/tags/type\" "
 
 }
-
+/* Add a time_sleep to ensure that the Boundary worker has time to register with the controllers
+and be in an active state. The boundary_storage_bucket needs to have an active worker when
+you configure the worker_filter to specify which target you wish to use. If you do not have
+an active worker, the build will fail
+*/
 resource "time_sleep" "wait_for_ingress_worker" {
   create_duration = "2m"
 
