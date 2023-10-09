@@ -28,19 +28,9 @@ variable "aws_region" {
   default     = "eu-west-2"
 }
 
-variable "private_vpc_cidr" {
-  type        = string
-  description = "The Private CIDR range to assign to the VPC"
-}
-
 variable "aws_vpc_cidr" {
   type        = string
   description = "The AWS Region CIDR range to assign to the VPC"
-}
-
-variable "private_subnet_cidr" {
-  type        = string
-  description = "The Private CIDR range to assign to the Private subnet"
 }
 
 variable "aws_subnet_cidr" {

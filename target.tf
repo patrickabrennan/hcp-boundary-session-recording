@@ -11,8 +11,8 @@ resource "boundary_target" "aws" {
     boundary_host_set_plugin.aws-dev.id,
     boundary_host_set_plugin.aws-prod.id,
   ]
-  # enable_session_recording = true
-  # storage_bucket_id        = boundary_storage_bucket.boundary_aws_bucket.id
-  //injected_application_credential_source_ids = [boundary_credential_library_vault_ssh_certificate.vault_ssh_cert.id]
-  //injected_application_credential_source_ids = [boundary_credential_library_vault.vault_cred_lib.id]
+  enable_session_recording                   = true
+  storage_bucket_id                          = boundary_storage_bucket.boundary_aws_bucket.id
+  injected_application_credential_source_ids = [boundary_credential_ssh_private_key.static_ssh_key.id]
+  depends_on                                 = [boundary_storage_bucket.boundary_aws_bucket]
 }

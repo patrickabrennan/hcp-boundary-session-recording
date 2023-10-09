@@ -18,8 +18,7 @@ and be in an active state. The boundary_storage_bucket needs to have an active w
 you configure the worker_filter to specify which target you wish to use. If you do not have
 an active worker, the build will fail
 */
-resource "time_sleep" "wait_for_ingress_worker" {
-  create_duration = "2m"
-
-  depends_on = [aws_instance.boundary_ingress_worker]
+resource "time_sleep" "wait_for_ingress_worker_creation" {
+  create_duration = "3m"
+  depends_on      = [aws_instance.boundary_ingress_worker]
 }
