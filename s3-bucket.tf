@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "boundary_session_recording" {
+resource "aws_s3_bucket" "boundary_session_recording_bucket" {
   bucket        = var.s3_bucket_name
   force_destroy = true
   tags = {
@@ -9,13 +9,13 @@ resource "aws_s3_bucket" "boundary_session_recording" {
 }
 
 resource "aws_s3_bucket_versioning" "versioning_demo" {
-  bucket = aws_s3_bucket.boundary_session_recording.id
+  bucket = aws_s3_bucket.boundary_session_recording_bucket.id
   versioning_configuration {
     status = "Enabled"
   }
 }
 
 resource "aws_s3_bucket_metric" "demo-bucket-metric" {
-  bucket = aws_s3_bucket.boundary_session_recording.id
+  bucket = aws_s3_bucket.boundary_session_recording_bucket.id
   name   = "EntireBucket"
 }

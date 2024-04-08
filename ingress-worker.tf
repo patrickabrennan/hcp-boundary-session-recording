@@ -133,7 +133,7 @@ resource "aws_instance" "boundary_ingress_worker" {
   }
 }
 
-resource "time_sleep" "wait_for_bounday_storage_bucket_deletion" {
-  destroy_duration = "2m"
-  depends_on       = [boundary_storage_bucket.boundary_aws_bucket]
-}
+# resource "time_sleep" "wait_for_bounday_storage_bucket_deletion" {
+#   destroy_duration = "2m"
+#   depends_on       = [boundary_storage_bucket.boundary_aws_bucket]
+# }

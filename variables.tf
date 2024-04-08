@@ -47,7 +47,7 @@ variable "availability_zone" {
 variable "s3_bucket_name" {
   description = "Name of the S3 bucket"
   type        = string
-  default     = "boundary-s3-bucket"
+  default     = "boundary-test-s3-bucket"
 }
 
 variable "s3_bucket_name_tags" {
@@ -61,6 +61,18 @@ variable "s3_bucket_env_tags" {
   description = "Environment tag to associate to the S3 Bucket"
   default     = "Boundary"
 }
+
+variable "vault_addr" {
+  type = string
+}
+
+# variable "vault_token" {
+#   type = string
+# }
+
+# variable "boundary_vault_token" {
+#   type = string
+# }
 
 variable "instances" {
   default = [
