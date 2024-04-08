@@ -6,7 +6,7 @@
 
 HashiCorp Boundary is a secure and efficient way to access distributed infrastructure. It provides secure access to SSH, RDP, and HTTP(S) resources, without the need for VPNs or exposing the infrastructure to the public internet.
 
-SSH recording is only available when the target type is set to `ssh`, which means that the credentials have to be injected. If you are not using Vault to provide dynamic SSH credentials, you can utilise Boundary's static credential store, reference a static username and `.pem` file and have that injected into your session. This repo demonstates Boundary's ability to inject credentials without the need of Vault.
+SSH recording is only available when the target type is set to `ssh`, which means that the credentials are injected. If you are not using Vault to provide dynamic SSH credentials, you can utilise Boundary's static credential store, reference a static username and `.pem` file and have that injected into your session. This repo demonstates Boundary's ability to application credential injection, leveraging Vault. There are also credential stores created for Boundary's native credential store.
 
 This README file explains how to set up session recording for HCP Boundary
 
@@ -15,13 +15,14 @@ This README file explains how to set up session recording for HCP Boundary
 The session recording deployment in this repo has been setup as follows:
 
 1. Configure HCP Boundary.
-2. Deploy a Boundary Worker in a public network.
-3. Establish a connection between the Boundary Controller and the Boundary Workers.
-4. Deploy an AWS S3 bucket for the session recording
-5. Configure the Boundary Storage Bucket in the Boundary UI
-6. Deploy a server instance in a public subnet. 
+2. Configure HCP Vault.
+3. Deploy a Boundary Worker in a public network.
+4. Establish a connection between the Boundary Controller and the Boundary Workers.
+5. Deploy an AWS S3 bucket for the session recording
+6. Configure the Boundary Storage Bucket in the Boundary UI
+7. Deploy a server instance in a public subnet. 
 
-Your HCP Boundary Cluster needs to be created prior to executing the Terraform code. For people new to HCP, a trial can be utilised, which will give $50 credit to try, which is ample to test this solution.
+Your HCP Boundary and Vault clusters need to be created prior to executing the Terraform code. For people new to HCP, a trial can be utilised, which will give $50 credit to try, which is ample to test this solution.
 
 ## tfvars Variables
 
@@ -36,3 +37,4 @@ cloud"
 - `aws_subnet_cidr`:                 = ""
 - `aws_access`:                      = ""
 - `aws_secret`:                      = ""
+- `vault_addr`:                      = ""
