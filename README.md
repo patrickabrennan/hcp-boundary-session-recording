@@ -6,7 +6,7 @@
 
 HashiCorp Boundary is a secure and efficient way to access distributed infrastructure. It provides secure access to SSH, RDP, and HTTP(S) resources, without the need for VPNs or exposing the infrastructure to the public internet.
 
-SSH recording is only available when the target type is set to `ssh`, which means that the credentials are injected. If you are not using Vault to provide dynamic SSH credentials, you can utilise Boundary's static credential store, reference a static username and `.pem` file and have that injected into your session. This repo demonstates Boundary's ability to application credential injection, leveraging Vault. There are also credential stores created for Boundary's native credential store.
+SSH recording is only available when the target type is set to `ssh`, which means that the credentials are injected. If you are not using Vault to provide dynamic SSH credentials, you can utilise Boundary's static credential store, reference a static username and `.pem` file and have that injected into your session. This repo demonstates Boundary's ability to use application credential injection, leveraging Vault. There are also credential stores created for Boundary's native credential store.
 
 This README file explains how to set up session recording for HCP Boundary
 
