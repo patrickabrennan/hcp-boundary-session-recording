@@ -22,6 +22,8 @@ The session recording deployment in this repo has been setup as follows:
 6. Configure the Boundary Storage Bucket in the Boundary UI
 7. Deploy a server instance in a public subnet. 
 
+The `variables.tf` file has the region set to eu-west-2 (London). Please change this to the region of your choice, along with the appropriate CIDR ranges.
+
 Your HCP Boundary and Vault clusters need to be created prior to executing the Terraform code. For people new to HCP, a trial can be utilised, which will give $50 credit to try, which is ample to test this solution.
 
 ## tfvars Variables
