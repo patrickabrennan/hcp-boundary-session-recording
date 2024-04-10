@@ -15,11 +15,12 @@ resource "boundary_credential_store_static" "static_cred_store" {
   scope_id    = boundary_scope.project.id
 }
 
-resource "boundary_credential_ssh_private_key" "static_ssh_key" {
-  credential_store_id = boundary_credential_store_static.static_cred_store.id
-  private_key         = file("../boundary.pem")
-  username            = "ec2-user"
-}
+4-10-2024 #removed static key as using Vault 
+#resource "boundary_credential_ssh_private_key" "static_ssh_key" {
+#  credential_store_id = boundary_credential_store_static.static_cred_store.id
+#  private_key         = file("../boundary.pem")
+#  username            = "ec2-user"
+#}
 
 //Credential store for Vault
 resource "boundary_credential_store_vault" "vault_cred_store" {
