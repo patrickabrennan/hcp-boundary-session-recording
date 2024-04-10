@@ -33,6 +33,12 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+
+  #added 4-10-2024: Dynamic creds
+  assume_role_with_web_identity {
+    role_arn                = var.role_arn
+    web_identity_token_file = var.identity_token_file
+  }
 }
 
 provider "boundary" {
