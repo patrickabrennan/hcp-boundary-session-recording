@@ -91,3 +91,11 @@ variable "vm_tags" {
     # { "Name" : "boundary-4-production", "service-type" : "database", "application" : "production" }
   ]
 }
+
+variable "identity_token_file" {
+  type = string
+}
+
+variable ""role_arn" {
+  type = string
+}
