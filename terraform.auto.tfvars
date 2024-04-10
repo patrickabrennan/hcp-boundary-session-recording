@@ -4,7 +4,7 @@ auth_method_id: "ampw_xxxxxxxxxx"
 password_auth_method_login_name: = "admin"
 password_auth_method_password: = "PatisTesting!"
 aws_vpc_cidr: = "10.0.0.0/16"
-aws_subnet_cidr: = "10.1.0.0/24
+aws_subnet_cidr: = "10.1.0.0/24"
 
 #Fill out if not using 'role_arn'
 aws_access: = ""
